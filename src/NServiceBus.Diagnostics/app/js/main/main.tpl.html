@@ -1,0 +1,21 @@
+﻿<section ng-repeat="pipe in model" class="row">
+    <div class="direction">
+        <h3>{{pipe.title}}</h3>
+    </div>
+    <div class="content">
+        <button class="add-step">
+            <i class="fa fa-arrow-right"></i>
+            <i class="fa fa-plus-circle"></i>
+        </button>
+
+        <div ng-repeat-start="step in pipe.steps" class="step">
+            <h4>{{step.id}}</h4>
+            <p class="description">{{step.description}}</p>
+        </div>
+
+        <button ng-repeat-end class="add-step">
+            <i class="fa fa-arrow-right"></i>
+            <i class="fa fa-plus-circle"></i>
+        </button>
+    </div>
+</section>

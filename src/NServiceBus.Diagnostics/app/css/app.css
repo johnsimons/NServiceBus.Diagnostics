@@ -1,0 +1,78 @@
+﻿html {
+    font-size: 14px;
+}
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+.row {
+     display: flex;
+}
+
+.direction {
+     width: 9rem;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.maincontent {
+    display: flex;
+    flex-direction: column;
+}
+
+section.row .step {
+    width: 12rem;
+    margin-left: 2rem;
+}
+
+section.row .add-step {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  width: 5rem;
+  margin: 1rem 1rem;
+  padding: 0;
+}
+section.row .add-step i {
+  transition: all ease .3s;
+  font-size: 5rem;
+  vertical-align: middle;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -2.5rem;
+  margin-top: -2.5rem;
+  height: 5rem;
+  width: 5rem;
+}
+section.row .add-step .fa-arrow-right {
+  opacity: .5;
+}
+section.row .add-step .fa-plus-circle {
+  opacity: 0;
+}
+section.row .add-step:hover {
+  -webkit-transform: scale(0.7);
+}
+section.row .add-step:hover .fa-arrow-right {
+  opacity: 0;
+}
+section.row .add-step:hover .fa-plus-circle {
+  opacity: .8;
+}
+section.row .add-step.ng-enter.ng-enter-active,
+section.row .add-step.ng-leave {
+  width: 5rem;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}

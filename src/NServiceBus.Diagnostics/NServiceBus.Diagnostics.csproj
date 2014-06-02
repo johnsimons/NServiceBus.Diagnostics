@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NServiceBus.Diagnostics</RootNamespace>
     <AssemblyName>NServiceBus.Diagnostics</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,19 +30,20 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Nancy">
-      <HintPath>..\packages\Nancy.0.22.2\lib\net40\Nancy.dll</HintPath>
+    <Reference Include="Nancy, Version=0.22.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Nancy\src\Nancy\bin\Debug\Nancy.dll</HintPath>
     </Reference>
-    <Reference Include="Nancy.Hosting.Self">
-      <HintPath>..\packages\Nancy.Hosting.Self.0.22.2\lib\net40\Nancy.Hosting.Self.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus">
-      <HintPath>..\..\..\NServiceBus\binaries\NServiceBus.dll</HintPath>
+    <Reference Include="Nancy.Hosting.Self, Version=0.22.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Nancy\src\Nancy.Hosting.Self\bin\Debug\Nancy.Hosting.Self.dll</HintPath>
     </Reference>
     <Reference Include="NServiceBus.Core">
-      <HintPath>..\..\..\NServiceBus\binaries\NServiceBus.Core.dll</HintPath>
+      <HintPath>..\packages\NServiceBus.4.7.0-unstable0403\lib\net45\NServiceBus.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -60,12 +63,33 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app\fonts\fontawesome-webfont.eot" />
+    <None Include="app\fonts\fontawesome-webfont.ttf" />
+    <None Include="app\fonts\fontawesome-webfont.woff" />
+    <None Include="app\fonts\FontAwesome.otf" />
+    <None Include="app\js\lib\angular-animate.min.js.map" />
+    <None Include="app\js\lib\angular-route.min.js.map" />
+    <None Include="app\js\lib\angular.min.js.map" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Root\index.html" />
+    <EmbeddedResource Include="app\index.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="app\css\app.css" />
+    <Content Include="app\css\font-awesome.min.css" />
+    <Content Include="app\fonts\fontawesome-webfont.svg" />
+    <Content Include="app\js\app.js" />
+    <Content Include="app\js\main\main.js" />
+    <Content Include="app\js\main\main.tpl.html" />
+    <Content Include="app\js\lib\angular-animate.min.js" />
+    <Content Include="app\js\lib\angular-route.min.js" />
+    <Content Include="app\js\lib\angular.min.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
