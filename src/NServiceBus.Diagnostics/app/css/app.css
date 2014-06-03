@@ -3,8 +3,6 @@
 }
 body {
     margin: 0;
-    width: 100%;
-    height: 100%;
 }
 *,
 *:after,
@@ -12,26 +10,28 @@ body {
   box-sizing: border-box;
 }
 .row {
-     display: flex;
+    border:1px solid black;
+    padding: 7px;
+margin: 5px;
+    
 }
 
 .direction {
-     width: 9rem;
 }
 
 .content {
-    display: flex;
-    flex-wrap: wrap;
+    overflow-x:scroll;
+    white-space: nowrap;
+    padding-bottom: 2rem;
 }
 
 .maincontent {
-    display: flex;
-    flex-direction: column;
 }
 
 section.row .step {
-    width: 12rem;
-    margin-left: 2rem;
+    border:1px solid black;
+    margin-right:4px;
+    display: inline-block;
 }
 
 section.row .add-step {
@@ -39,19 +39,18 @@ section.row .add-step {
   border: none;
   cursor: pointer;
   position: relative;
-  width: 5rem;
-  margin: 1rem 1rem;
-  padding: 0;
+  width: 3rem;
+  display: inline-block;
 }
 section.row .add-step i {
   transition: all ease .3s;
-  font-size: 5rem;
+  font-size: 2rem;
   vertical-align: middle;
   position: absolute;
   top: 50%;
   left: 50%;
   margin-left: -2.5rem;
-  margin-top: -2.5rem;
+  margin-top: -3.0rem;
   height: 5rem;
   width: 5rem;
 }
@@ -62,7 +61,7 @@ section.row .add-step .fa-plus-circle {
   opacity: 0;
 }
 section.row .add-step:hover {
-  -webkit-transform: scale(0.7);
+  -webkit-transform: scale(1);
 }
 section.row .add-step:hover .fa-arrow-right {
   opacity: 0;
