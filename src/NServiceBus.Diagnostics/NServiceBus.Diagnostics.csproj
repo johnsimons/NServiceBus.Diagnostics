@@ -33,17 +33,15 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Nancy, Version=0.22.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Nancy\src\Nancy\bin\Debug\Nancy.dll</HintPath>
+    <Reference Include="Nancy">
+      <HintPath>..\packages\Nancy.0.22.2\lib\net40\Nancy.dll</HintPath>
     </Reference>
-    <Reference Include="Nancy.Hosting.Self, Version=0.22.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Nancy\src\Nancy.Hosting.Self\bin\Debug\Nancy.Hosting.Self.dll</HintPath>
+    <Reference Include="Nancy.Hosting.Self">
+      <HintPath>..\packages\Nancy.Hosting.Self.0.22.2\lib\net40\Nancy.Hosting.Self.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus.Core">
-      <HintPath>..\packages\NServiceBus.4.7.0-unstable0403\lib\net45\NServiceBus.Core.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="NServiceBus.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NServiceBus.4.7.0-unstable0608\lib\net45\NServiceBus.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -82,9 +80,11 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="app\css\app.css" />
+    <Content Include="app\css\bootstrap.css" />
     <Content Include="app\css\font-awesome.min.css" />
     <Content Include="app\fonts\fontawesome-webfont.svg" />
     <Content Include="app\js\app.js" />
+    <Content Include="app\js\directives\ui-bootstrap-tpls-0.11.0.min.js" />
     <Content Include="app\js\main\main.js" />
     <Content Include="app\js\main\main.tpl.html" />
     <Content Include="app\js\lib\angular-animate.min.js" />

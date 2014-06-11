@@ -3,20 +3,25 @@
 <head>
     <meta charset="utf-8">
     <title>NServiceBus Diagnostics</title>
+    <link id="bootstrap-style" href="css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/css/app.css" />
 </head>
-<body ng-controller ="AppCtrl">
-    <header>
-        <h1>NServiceBus Diagnostics</h1>
-    </header>
+    <body ng-controller ="AppCtrl">
+        <div class="panel-body">
+            <h3>NServiceBus.Diagnostics</h3>
+        </div>
+           
+        <div class="container-fluid">
+            <div ng-view class="maincontent"></div>
+        </div>
 
-    <div ng-view class="maincontent"></div>
-
-    <script src="js/lib/angular.min.js"></script>
-    <script src="js/lib/angular-route.min.js"></script>
-    <script src="js/lib/angular-animate.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/main/main.js"></script>
-</body>
+  
+        <script src="js/lib/angular.min.js"></script>
+        <script src="js/lib/angular-route.min.js"></script>
+        <script src="js/lib/angular-animate.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/main/main.js"></script>
+        <script src="js/directives/ui-bootstrap-tpls-0.11.0.min.js"></script>
+    </body>
 </html>

@@ -3,6 +3,7 @@
 angular.module('diag', [
     'ngRoute',
     'ngAnimate',
+    'ui.bootstrap',
     'main']);
 
 angular.module('diag')

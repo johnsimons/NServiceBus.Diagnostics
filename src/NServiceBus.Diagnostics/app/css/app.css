@@ -2,7 +2,7 @@
     font-size: 14px;
 }
 body {
-    margin: 0;
+    margin: 5;
 }
 *,
 *:after,
@@ -10,7 +10,6 @@ body {
   box-sizing: border-box;
 }
 .row {
-    border:1px solid black;
     padding: 7px;
 margin: 5px;
     
@@ -29,13 +28,11 @@ margin: 5px;
 }
 
 section.row .step {
-    border:1px solid black;
     margin-right:4px;
     display: inline-block;
 }
 
 section.row .add-step {
-  background: transparent;
   border: none;
   cursor: pointer;
   position: relative;
@@ -74,4 +71,17 @@ section.row .add-step.ng-leave {
   width: 5rem;
   margin-left: -1.5rem;
   margin-right: -1.5rem;
+}
+
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.brand
+{
+  background: url(http://particular.net/Themes/ParticularSoftware/Styles/images/logo.png) no-repeat left center;
+  height: 20px;
+  width: 100px;
 }
