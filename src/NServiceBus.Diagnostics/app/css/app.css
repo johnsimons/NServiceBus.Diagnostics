@@ -20,7 +20,7 @@ margin: 5px;
 
 .content {
     overflow-x:scroll;
-    white-space: nowrap;
+    white-space: normal;
     padding-bottom: 2rem;
 }
 
