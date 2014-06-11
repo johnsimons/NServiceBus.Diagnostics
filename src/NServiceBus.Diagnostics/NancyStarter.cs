@@ -6,12 +6,19 @@ using System.Net;
 using System.Text;
 using Nancy.Hosting.Self;
 using NServiceBus.Config;
+using NServiceBus.ObjectBuilder;
 
 namespace NServiceBus.Diagnostics
 {
     class NancyStarter:IWantToRunWhenBusStartsAndStops
     {
+        private readonly IBuilder _builder;
         private NancyHost host;
+
+        public NancyStarter(IBuilder builder)
+        {
+            _builder = builder;
+        }
 
         public void Start()
         {
@@ -26,7 +33,7 @@ namespace NServiceBus.Diagnostics
 
             var uri = string.Format("http://localhost:49152", SelectNextAvailablePort());
 
-            host = new NancyHost(hostConfiguration, new Uri(uri));
+            host = new NancyHost(new NancyBootstrapper(_builder), hostConfiguration, new Uri(uri));
             host.Start();
 
             Process.Start(uri);

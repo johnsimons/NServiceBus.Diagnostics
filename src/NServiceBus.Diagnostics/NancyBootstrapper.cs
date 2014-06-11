@@ -7,38 +7,28 @@ using Nancy.Conventions;
 using Nancy.Diagnostics;
 using Nancy.TinyIoc;
 using Nancy.ViewEngines;
+using NServiceBus.ObjectBuilder;
 using NServiceBus.Pipeline;
 
 namespace NServiceBus.Diagnostics
 {
     public class NancyBootstrapper : DefaultNancyBootstrapper
     {
-        /*
+        private readonly IBuilder _builder;
+
+        public NancyBootstrapper(IBuilder builder)
+        {
+            _builder = builder;
+        }
+
+        
        protected override void ConfigureApplicationContainer(TinyIoCContainer container)
        {
-           //container.Register((_, __) =>
-           //{
-           //    Console.Out.WriteLine("Foo");
-           //    return Configure.Instance.Builder.Build<PipelineBuilder>();
-           //});
+           container.Register((_, __) => _builder.Build<PipelineExecutor>());
 
            base.ConfigureApplicationContainer(container);
-           ResourceViewLocationProvider.RootNamespaces.Add(
-             Assembly.GetAssembly(typeof(NancyBootstrapper)), "NServiceBus.Diagnostics.Views");
        }
         
-       
-       protected override NancyInternalConfiguration InternalConfiguration
-       {
-           get
-           {
-               return NancyInternalConfiguration.WithOverrides(configuration =>
-               {
-                   configuration.ViewLocationProvider = typeof (ResourceViewLocationProvider);
-               });
-           }
-       }
-       */
 
         protected override void ConfigureConventions(NancyConventions conventions)
         {
