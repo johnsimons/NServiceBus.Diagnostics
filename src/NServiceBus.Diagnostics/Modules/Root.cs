@@ -5,18 +5,11 @@ namespace NServiceBus.Diagnostics.Modules
 {
     public class Root : NancyModule
     {
-        public Root()
+        public Root(PipelineExecutor pipelineExecutor)
         {
-            
-
             Get["/"] = _ => View["index.html"];
 
-            Get["/api"] = _ =>
-            {
-                var pipelineBuilder = Configure.Instance.Builder.Build<PipelineExecutor>();
-
-                return Response.AsJson(new {incoming = pipelineBuilder.Incoming, outgoing = pipelineBuilder.Outgoing});
-            };
+            Get["/api"] = _ => Response.AsJson(new { incoming = pipelineExecutor.Incoming, outgoing = pipelineExecutor.Outgoing });
         }
     }
 }
