@@ -1,12 +1,8 @@
 ﻿using System;
 using System.IO;
-using System.Reflection;
 using Nancy;
-using Nancy.Bootstrapper;
 using Nancy.Conventions;
-using Nancy.Diagnostics;
 using Nancy.TinyIoc;
-using Nancy.ViewEngines;
 using NServiceBus.ObjectBuilder;
 using NServiceBus.Pipeline;
 
@@ -25,8 +21,6 @@ namespace NServiceBus.Diagnostics
        protected override void ConfigureApplicationContainer(TinyIoCContainer container)
        {
            container.Register((_, __) => _builder.Build<PipelineExecutor>());
-
-           base.ConfigureApplicationContainer(container);
        }
         
 
