@@ -1,6 +1,5 @@
 
 using System;
-using System.Net.Cache;
 
 namespace Endpoint
 {
@@ -12,6 +11,9 @@ namespace Endpoint
 	*/
 	public class EndpointConfig : IConfigureThisEndpoint, AsA_Server
     {
+        public void Customize(ConfigurationBuilder builder)
+        {
+        }
     }
 
     class Sender : IWantToRunWhenBusStartsAndStops
